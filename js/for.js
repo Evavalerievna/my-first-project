@@ -18,14 +18,15 @@ console.log(factorial(3));
 
 //нахождение факториала (цикл for)
 
-const factorial = n => {
+/* const factorial = n => {
     let result = 1; 
     for (let counter = 1; counter <=n; counter ++) {
         result *= counter;
     }
     return result;
 };
-console.log(factorial(3));
+console.log(factorial(3)); */
+
 // все три выражения в цикле не являются обязательными
 // 1) в блоке инициализации не требуется определять переменные
 // let counter = 1;
@@ -74,16 +75,16 @@ if(num ===1) {
 //с использованием switch
 switch(num) {
     case 1: // if(num ===1)
-    answer = "one";
-    break; //необходим чтобы выйти из блока switch
+        answer = "one";
+        break; //необходим чтобы выйти из блока switch
 
     case 2: // if(num ===2)
-    answer = "two";
-    break; //необходим чтобы выйти из блока switch
+        answer = "two";
+        break; //необходим чтобы выйти из блока switch
 
     default: 
-    answer = "nothing";
-    break; //необходим чтобы выйти из блока switch
+        answer = "nothing";
+        break; //необходим чтобы выйти из блока switch
 };
 
 
