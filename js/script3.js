@@ -44,11 +44,20 @@ const maxAndMinNum = (a, b, c) => [
 /* Задача 4. Реализуйте функцию, которая переворачивает строку. 
 Например:
 reverse('hello, world!'); // !dlrow ,olleh
-const str = 'hello, world!'
+const str = 'hello, world!';
 
 function reverseString(str) {
- return str.split('').reverse().join('')
+    return str.split('').reverse().join('')
 };
 
 console.log('str:', str);
-console.log('reverse:', reverseString(str));*/
+console.log('reverse:', reverseString(str)); */
+
+const str = 'hello, world!';
+
+const reverseString = (str) => {
+    return str.split('').reverse().join('')
+};
+
+console.log('str:', str);
+console.log('reverse:', reverseString(str));
