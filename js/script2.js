@@ -44,3 +44,5 @@ console.log(sum(firstNum, secondNum)); */
     };
 
 console.log(massifOfNumbers(3,6)); */
+
+
