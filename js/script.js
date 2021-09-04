@@ -159,3 +159,13 @@
 //    return (fahr -32) * 5 / 9;
 //};
 //console.log(fahrToCelcius(50)); //32.22222
+
+let count =0;
+
+const f = () => {
+   count = count +1;
+   console.log(count);
+   return true;
+};
+
+console.log(f());
