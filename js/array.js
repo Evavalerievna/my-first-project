@@ -490,3 +490,182 @@ const bubbleSort = coll => {
     return coll;
 };
 console.log(bubbleSort([3, 2, 10, -2, 0, -4, -8, 22, 34, 7]));
+
+
+// Стек - упорядоченная коллекция элементов, в которой добавление новых и удаление старых элементов всегда происходит с одного конца коллекции. Обычно его называют вершиной стека. 
+// структура данных - это конкретный способ хранения и организации данных.
+// другие структуры данных: списки, хеш-таблицы, деревья, графы, стек, очередь.
+
+// Работа со стеком включает в себя следующие операции:
+// - добавить в стек (push)
+// - взять из стека (pop)
+// - вернуть элемент с вершины стека без удаления (peekBack)
+// - проверить на пустоту(isEmpty)
+// - вернуть размер (size)
+
+// const stack = [];
+
+// stack.push(3);
+// console.log(stack); // [3]
+// stack.push('Winterfall');
+// console.log(stack);
+// stack.push(true);
+// console.log(stack);
+
+// const element1 = stack.pop();
+// console.log(element1);
+// const element2 = stack.pop();
+// console.log(element2);
+// console.log(stack);
+
+// функцию, которая проверяет, что парные скобки сбалансированы. т.е. каждая открывающая скобка имеет закрывающую. (), (()), ((())).
+// пример несбалансированных скобок: (, ((), )(.
+
+// - если перед нами открывающий элемент, то заносим его в стек
+// - если закрывающий, то достаем из стека элемент (очевидно, последний добавленный) и смотрим, что он открывающий для данного закрывающего. если проверка провалилась, значит выражение не соотв. требуемому формату. 
+// - если мы дошли до конца строки и стек пустой, то все хорошо. если в стеке остались элементы, то проверка не прошла.
+
+// const checkIfBalanced = (expression) => {
+//     const stack = [];
+  
+//     for (const symbol of expression) {
+//       if (symbol === '(') {
+//         stack.push(symbol);
+//       } else if (symbol === ')') {
+//         // вызов метода pop на пустом массиве возвращает undefined
+//         if (!stack.pop()) {
+//           return false;
+//         }
+//       }
+//     }
+  
+//     return stack.length === 0;
+//   };
+  
+//   console.log(checkIfBalanced('('));
+//   console.log(checkIfBalanced(')('));
+//   console.log(checkIfBalanced('()()'));
+//   console.log(checkIfBalanced('((()))'));
+//   console.log(checkIfBalanced('((())())'));
+
+
+// деструктуризация - синтаксическая возможность раскладывать элементы массива (и не только) в отдельные константы и переменные.
+// const points = [3, 5];
+
+// console.log(`${points[0]}:${points[1]}`);
+
+// const points = [3, 5];
+// const x = points[0];
+// const y = points[1];
+// console.log(`${x}:${y}`);
+
+// const points = [3, 5];
+// // слева массив повторяет структуру правого массива, но вместо значений используются идентификаторы
+// // [x, y] = [3, 5], где x = 3, y = 5
+// const [x, y] = points;
+// console.log(`${x}:${y}`);
+
+// const points = [3, 5];
+
+// // извлекаем первый элемент
+// const [x] = points;
+// console.log(x);
+
+// // извлекаем второй элемент
+// // для этого просто не указываем первый
+// const [, y] = points;
+// console.log(y);
+
+// // и даже так
+// const [, secondElement, , fourthElement, fifthElement] = [1, 2, 3, 4, 5, 6];
+
+// console.log(secondElement); // 2
+// console.log(fourthElement); // 4
+// console.log(fifthElement); // 5
+
+// const [firstElement, secondElement, thirdElement = 3] = [1, 2];
+// console.log(firstElement);
+// console.log(secondElement);
+// console.log(thirdElement);
+
+// деструктуризация в циклах
+// const points = [
+//     [4, 3],
+//     [0, -3],
+// ];
+
+// for(const [x, y] of points) {
+//     console.log([x, y]);
+// }
+
+// деструктуризация строк
+// const [first, second, third] = 'two';
+// console.log(first);
+// console.log(second);
+// console.log(third);
+
+// rest оператор и деструктуризация
+// rest оператор позволяет свернуть часть элементов во время деструктуризации. 
+
+// const fruits = ['apple', 'orange', 'banana', 'pineapple'];
+
+// const [first, ...rest] = fruits;
+// console.log(first);
+// console.log(rest);
+
+// const [first, second, ...rest] = fruits;
+// console.log(rest);
+
+// в ситуациях, когда нас интересует только часть массива, но не важны первые элементы, лучше воспользоваться методом массива slice()
+// метод slice возвращает нвоый массив, а не изменяет старый
+// const fruits = ['apple', 'orange', 'banana', 'pineapple'];
+// const rest = fruits.slice(1);
+// console.log(rest);
+// console.log(fruits);
+
+// const [first, second, ...rest] = 'some string';
+// console.log(first);
+// console.log(second);
+// console.log(rest);
+
+// const [...rest] = [1, 2, 3];
+// console.log(rest);
+
+// spread оператор и создание новых массивов
+// spread оператор растягивает элементы
+
+// Задача. нужно определить массив, добавив туда элементы из другого массива.
+// const russianCities = ['moscow', 'kazan'];
+// const cities = [...russianCities, 'milan', 'rome'];
+// console.log(cities);
+
+// копирование массива
+// const russianCities = ['moscow', 'kazan'];
+// const copy = [...russianCities];
+// copy.push('samara');
+// console.log(russianCities);
+// console.log(copy);
+
+// то же самое без spread-оператора
+// const russianCities = ['moscow', 'kazan'];
+// const copy = russianCities.slice();
+// copy.push('samara');
+
+// console.log(russianCities);
+// console.log(copy);
+
+
+// функцию, которая принимает на вход в виде массива кошелек с деньгами и название валюты и возвращает сумму денег указанной валюты.
+// параметры функции: 
+// * массив, содержащий купюры разных валют с различными номиналами
+// * наименование валюты
+
+// const money1 = ['eur 10', 'usd 1', 'usd 10', 'rub 50', 'usd 5',];
+// getTotalAmount(money1, 'usd') // 16
+// const money2 = ['eur 10', 'usd 1', 'eur 5', 'rub 100', 'eur 20', 'eur 100', 'rub 200',];
+// getTotalAmount(money2, 'eur') // 135
+// const money3 = ['eur 10', 'rub 50', 'eur 5', 'rub 10', 'rub 10', 'eur 100', 'rub 200',];
+// getTotalAmount(money3, 'rub') // 270
+
+// getTotalAmount(money1, 'usd') // 270
+
